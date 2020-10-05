@@ -6,7 +6,7 @@ function guardar(){
 	var nombre=document.querySelector('#nombre').value,
 	codigoEstudiante=document.querySelector('#codigo').value,
 	carreraEstudiante =document.querySelector('#carrera').value;
-    addFriend(nombre,codigoEstudiante,carreraEstudiante);
+    addStudent(nombre,codigoEstudiante,carreraEstudiante);
     imprimirTabla();
 
 }
@@ -15,8 +15,8 @@ function guardar(){
 
 function imprimirTabla(){
 
-var lista= getFriendList(),
-tbody=document.querySelector('#listaPersonas tbody');
+var lista= getStudentList(),
+tbody=document.querySelector('#listaEstudiantes tbody');
 
 tbody.innerHTML='';
 
@@ -28,7 +28,6 @@ for(var i=0; i < lista.length;i++){
 		nameCell.innerHTML= lista[i].nombre;
 		codigoCell.innerHTML=lista[i].codigo;
 		carreraCell.innerHTML=lista[i].carrera;
-
 
 
 		tbody.appendChild(row);

@@ -1,32 +1,32 @@
-var listaPersonas=[];
+var listaEstudiantes=[];
 
 
-function addFriend(pname,codigo,carrera){
+function addStudent(pname,codigo,carrera){
 
-var newFriend = {
+var newStudent = {
 	nombre:pname,
 	codigo:codigo,
 	carrera:carrera
 };
-console.log(newFriend);
+console.log(newStudent);
 
-listaPersonas.push(newFriend);
-localStoeFriendList(listaPersonas);
-
+listaEstudiantes.push(newStudent);
+localStoreStudentList(listaEstudiantes);
+	
 }
 
-function getFriendList(){
-	var storedList =localStorage.getItem('localFriendList');
+function getStudentList(){
+	var storedList =localStorage.getItem('localStudentList');
 	if(storedList == null){
-		friendList = [];
+		listaEstudiantes =[];
 	}else{
-		listaPersonas=JSON.parse(storedList);
+		listaEstudiantes=JSON.parse(storedList);
 	}
-	return listaPersonas;
+	return listaEstudiantes;
 }
 /*funcion para guardar en el localStorage */
-function localStoeFriendList(pList){
-	localStorage.setItem('localFriendList',JSON.stringify(pList));
+function localStoreStudentList(pList){
+	localStorage.setItem('localStudentList',JSON.stringify(pList));
 
 
 }
